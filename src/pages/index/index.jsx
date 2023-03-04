@@ -41,7 +41,9 @@ const Index = () => {
         <View className='index-tab'>
           {
             DEFAULT_TAB_LIST.map(item => (
-              <View key={item.tab} className={`index_tab_item ${item.tab} ${tabIndex === item.index ? 'current' : ''}`} onClick={() => switchTab(item.index)}>
+              <View key={item.tab} className={`index_tab_item ${item.tab} ${tabIndex === item.index ? 'current' : ''}`} 
+                onClick={() => switchTab(item.index)}
+              >
                 {item.title}
               </View>
             ))

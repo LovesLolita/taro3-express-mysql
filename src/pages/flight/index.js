@@ -1,8 +1,10 @@
-import { View,SwiperItem } from "@tarojs/components";
+import { useState } from "react";
+import { View,SwiperItem, Swiper, Image } from "@tarojs/components";
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
 
 import "./index.scss";
+
 
 const FLIGHT_TABS = [
   {
@@ -21,9 +23,16 @@ const FLIGHT_TABS = [
 
 const FlightIndex = () => {
 
+  // 点击 tab页
   const handleTabClick = (id) => {
     console.log(id);
   }
+
+  /* ad  */
+
+  // eslint-disable-next-line no-unused-vars
+  const [adList, setAdList] = useState([])
+  /* /ad */
 
   return (
     <View className='flight-container'>
@@ -44,6 +53,19 @@ const FlightIndex = () => {
             </SwiperItem>
         </Tab>
       </View>
+      <View className='alipay-swiper' style={{margin: '15px'}}>
+          <Swiper className='advs-banner-bd' autoplay circular interval={3000}>
+            {
+              adList.map(item => {
+                return (
+                  <SwiperItem key={item.id} className='item'>
+                    <Image className='img' src={item.imgUrl}></Image>
+                  </SwiperItem>
+                )
+              })
+            }
+          </Swiper>
+        </View>
     </View>
   );
 };
