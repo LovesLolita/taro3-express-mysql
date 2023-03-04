@@ -11,7 +11,6 @@ const Tab = (props) => {
     width: `${100 / props.tabList?.length}%`,
     transform: `translateX(${currentId * 100}%)`,
   }) 
-  console.log(1);
   useEffect(()=> {
     setInnerStyle({
       width: `${100 / props.tabList?.length}%`,

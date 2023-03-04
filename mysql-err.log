@@ -1,0 +1,57 @@
+[2023-03-05T01:42:55.672] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:44:55.671] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:44:55.679] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:46:55.680] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:46:55.684] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:48:55.687] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:48:55.692] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:50:55.692] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:50:55.694] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:52:55.696] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:52:55.699] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:54:55.714] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:54:55.719] [ERROR] mysqlErr - mysql connect error: null
+[2023-03-05T01:56:55.718] [ERROR] mysqlErr - mysql connect error: Error: Connection lost: The server closed the connection.
+    at Socket.<anonymous> (/Users/bluesma/Study/javaScript/自己的代码练习/taro3-express-mysql/node_modules/mysql2/lib/connection.js:114:31)
+    at Socket.emit (events.js:400:28)
+    at TCP.<anonymous> (net.js:686:12) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+[2023-03-05T01:56:55.720] [ERROR] mysqlErr - mysql connect error: null

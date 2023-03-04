@@ -1,14 +1,17 @@
-const express =  require('express') 
+const express = require('express')
 
 const app = express()
+const models = require('./models')
 
-app.get('/', (req, res)=>{
-  // req 请求对象
-  // res 响应对象
-  res.send('hello world')
-})
+// 当请求体content-type 时application/json时
+app.use(express.json())
+// 当请求体content-type 时application/x-www-form-urlencoded时
+app.use(express.urlencoded({
+  extended: false,
+}))
 
+models(app)
 const port = 3000
-app.listen(port, ()=>{
-  console.log(port);
+app.listen(port, () => {
+  console.log(`listening on ${port}`)
 })

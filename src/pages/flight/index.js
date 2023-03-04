@@ -25,7 +25,7 @@ const FlightIndex = () => {
 
   // 点击 tab页
   const handleTabClick = (id) => {
-    console.log(id);
+    
   }
 
   /* ad  */
