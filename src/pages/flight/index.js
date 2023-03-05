@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View,SwiperItem, Swiper, Image } from "@tarojs/components";
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
+import { adsReq } from '@/common/api'
 
 import "./index.scss";
 
@@ -25,13 +26,23 @@ const FlightIndex = () => {
 
   // 点击 tab页
   const handleTabClick = (id) => {
-    
+    id
   }
-
+  
   /* ad  */
 
-  // eslint-disable-next-line no-unused-vars
   const [adList, setAdList] = useState([])
+
+  // 获取ad 图
+  const getAds = () => {
+    adsReq().then((res) => {
+      const { result } = res
+      setAdList(result || [])
+    })
+  }
+  useEffect(() =>{
+    getAds()
+  }, [])
   /* /ad */
 
   return (

@@ -54,6 +54,7 @@ const sqlQuery = (strSql) => {
         reject(err)
         return
       }
+      console.log('数据库启动成功');
       resolve(res)
     })
   })

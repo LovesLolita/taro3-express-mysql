@@ -11,7 +11,7 @@ app.use(express.urlencoded({
 }))
 
 models(app)
-const port = 3000
+const port = 30000
 app.listen(port, () => {
   console.log(`listening on ${port}`)
 })
