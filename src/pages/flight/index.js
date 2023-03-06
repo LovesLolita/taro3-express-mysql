@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { View,SwiperItem, Swiper, Image } from "@tarojs/components";
+import { View,SwiperItem, Swiper, Image, Text, Button } from "@tarojs/components";
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
 import { adsReq } from '@/common/api'
+import dayjs from 'dayjs'
 
 import "./index.scss";
 
@@ -51,8 +52,31 @@ const FlightIndex = () => {
         <Tab  tabList={FLIGHT_TABS} onTabClick={handleTabClick} className='flight-index-tab'>
         <SwiperItem>
         <View className='item station'>
-          1234
-        </View>
+                <View
+                  className={`cell from ${false ? "slide" : ""}`}
+                  onClick={() => {}}
+                >
+                  上海
+                </View>
+                <Text
+                  onClick={()=>{}}
+                  className={`icon-zhihuan iconfont ${
+                    true ? "active" : ""
+                  }`}
+                ></Text>
+                <View
+                  className={`cell to ${false ? "slide" : ""}`}
+                  onClick={() => {}}
+                >
+                  上海
+                </View>
+              </View>
+              <View className='item date' onClick={()=>{}}>
+                {dayjs(new Date()).format("M月D日")}
+              </View>
+              <Button className='search-btn' onClick={()=>{}}>
+                搜一下吧～
+              </Button>
         </SwiperItem>
          {/*  往返  */}
          <SwiperItem>
