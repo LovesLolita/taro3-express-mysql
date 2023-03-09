@@ -2,7 +2,8 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/order/order'
+    'pages/order/order',
+    'pages/airportList/airportList',
   ],
   window: {
     backgroundTextStyle: 'light',
