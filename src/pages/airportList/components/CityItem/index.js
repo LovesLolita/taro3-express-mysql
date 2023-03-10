@@ -1,25 +1,33 @@
-import { PureComponent } from "react";
+import { memo, useEffect } from "react";
 import Taro from '@tarojs/taro'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { View, Text } from "@tarojs/components";
 
 import './index.scss';
 
-// @connect(({flightIndex}) => ({
-//   ...flightIndex
-// }))
+    // 将 store 中的 state 映射到组件的 props 中
+const mapStateToProps = (state) => {
+  return {
+    flightIndex: state.flightIndex
+  };
+}
 
-const CityItem = (props) => {
+
+const CityItem = memo((props) => {
+
+  useEffect(()=>{
+    console.log(props);
+  }, [props])
+
   const onCityClick = (cityInfo) => {
-    const { cityType } = this.props
     const {
       cityId,
       cityName,
       airportName,
     } = cityInfo
-    this.props.dispatch({
+    props.dispatch({
       type: 'flightIndex/updateState',
-      payload: cityType === "depart" ? {
+      payload: props.cityType === "depart" ? {
         dptCityId: cityId,
         dptAirportName: airportName,
         dptCityName: cityName
@@ -44,6 +52,7 @@ const CityItem = (props) => {
       }
     </View>
   )
-}
+})
 
-export default CityItem
+
+export default connect(mapStateToProps)(CityItem);
