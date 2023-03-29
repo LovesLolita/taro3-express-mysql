@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { View,SwiperItem, Swiper, Image, Text, Button } from "@tarojs/components";
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
@@ -35,15 +35,17 @@ const FlightIndex = () => {
   const [adList, setAdList] = useState([])
 
   // 获取ad 图
-  const getAds = () => {
-    adsReq().then((res) => {
-      const { result } = res
-      setAdList(result || [])
-    })
-  }
+  const getAds = useCallback(
+    () => {
+      adsReq().then((res) => {
+        const { result } = res
+        setAdList(result || [])
+      })
+    }, []
+  ) 
   useEffect(() =>{
     getAds()
-  }, [])
+  }, [getAds])
   /* /ad */
 
   return (
