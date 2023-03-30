@@ -10,7 +10,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
   defineConstants: {
   },
   copy: {
@@ -22,7 +22,7 @@ const config = {
   framework: 'react',
   compiler: 'webpack5',
   sass: {
-    data: `$primaryColor: '#07c160';`
+    data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";$primaryColor: '#07c160';`
   },
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
@@ -36,7 +36,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: ['nut-']
         }
       },
       url: {
