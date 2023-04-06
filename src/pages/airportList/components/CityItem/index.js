@@ -14,11 +14,6 @@ const mapStateToProps = (state) => {
 
 
 const CityItem = memo((props) => {
-
-  useEffect(()=>{
-    console.log(props);
-  }, [props])
-
   const onCityClick = (cityInfo) => {
     const {
       cityId,
@@ -27,7 +22,7 @@ const CityItem = memo((props) => {
     } = cityInfo
     props.dispatch({
       type: 'flightIndex/updateState',
-      payload: props.cityType === "depart" ? {
+      payload: props.flightIndex.cityType === "depart" ? {
         dptCityId: cityId,
         dptAirportName: airportName,
         dptCityName: cityName

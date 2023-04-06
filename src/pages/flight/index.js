@@ -1,11 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
 import { View,SwiperItem, Swiper, Image, Text, Button } from "@tarojs/components";
+import { connect } from 'react-redux'
+import Taro from "@tarojs/taro"
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
 import { adsReq } from '@/common/api'
 import dayjs from 'dayjs'
 
 import "./index.scss";
+
+const mapStateToProps = (state) => {
+  return {
+    flightIndex: state.flightIndex
+  };
+}
 
 
 const FLIGHT_TABS = [
@@ -23,13 +31,31 @@ const FLIGHT_TABS = [
   },
 ];
 
-const FlightIndex = () => {
-
+const FlightIndex = (props) => {
+  console.log(props);
   // 点击 tab页
   const handleTabClick = (id) => {
     id
   }
   
+  /* 城市选择 */
+
+  // 切换城市 
+  const chooseFlightCity = (type) => {
+    props.dispatch({
+      type: "flightIndex/updateState",
+      payload: {
+        cityType: type,
+      }
+    })
+    // 跳转
+    Taro.navigateTo({
+      url: "/pages/airportList/airportList"
+    })
+  }
+  /* 城市选择end */
+
+
   /* ad  */
 
   const [adList, setAdList] = useState([])
@@ -56,9 +82,9 @@ const FlightIndex = () => {
         <View className='item station'>
                 <View
                   className={`cell from ${false ? "slide" : ""}`}
-                  onClick={() => {}}
+                  onClick={() => chooseFlightCity("depart")}
                 >
-                  上海
+                  { props.flightIndex.dptCityName }
                 </View>
                 <Text
                   onClick={()=>{}}
@@ -68,9 +94,9 @@ const FlightIndex = () => {
                 ></Text>
                 <View
                   className={`cell to ${false ? "slide" : ""}`}
-                  onClick={() => {}}
+                  onClick={() => chooseFlightCity("arrive")}
                 >
-                  上海
+                   { props.flightIndex.arrCityName }
                 </View>
               </View>
               <View className='item date' onClick={()=>{}}>
@@ -107,4 +133,4 @@ const FlightIndex = () => {
   );
 };
 
-export default FlightIndex;
+export default connect(mapStateToProps)(FlightIndex);
