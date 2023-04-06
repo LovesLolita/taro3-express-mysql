@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import Taro from '@tarojs/taro'
 import { connect } from 'react-redux'
 import { View, Text } from "@tarojs/components";
