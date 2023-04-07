@@ -80,5 +80,11 @@
     "react-refresh": "^0.11.0",
     "stylelint": "^14.4.0",
     "webpack": "5.69.0"
+  },
+  "resolutions": {
+    "@swc/core": "1.3.42"
+  },
+  "overrides": {
+    "@swc/core": "1.3.42"
   }
 }
