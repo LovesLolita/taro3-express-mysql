@@ -5,6 +5,7 @@ import Taro from "@tarojs/taro"
 import Tab from "@/components/Tab";
 import NoExploit from '@/components/NoExploit'
 import { adsReq } from '@/common/api'
+import { Calendar } from '@nutui/nutui-react-taro';
 import dayjs from 'dayjs'
 
 import "./index.scss";
@@ -54,6 +55,10 @@ const FlightIndex = (props) => {
     })
   }
   /* 城市选择end */
+
+  /* 日历 */
+
+  /* /日历 */
 
 
   /* ad  */
