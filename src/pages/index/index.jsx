@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { View } from "@tarojs/components";
 import "./index.scss";
-import FlightIndex from "../flight";
+import FlightIndex from "../flight/index/index";
 import NoExploit from "../../components/NoExploit";
 
 

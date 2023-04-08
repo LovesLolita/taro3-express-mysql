@@ -1,4 +1,5 @@
 import path from 'path'
+
 const config = {
   projectName: 'taro-express-mysql-my',
   date: '2023-3-3',
@@ -25,8 +26,10 @@ const config = {
     data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";$primaryColor: '#07c160';`
   },
   alias: {
+    '@/': path.resolve(__dirname, '..', 'src/'),
     '@/components': path.resolve(__dirname, '..', 'src/components'),
     '@/common': path.resolve(__dirname, '..', 'src/common'),
+    '@/pages': path.resolve(__dirname, '..', 'src/pages'),
   },
   cache: {
     enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache

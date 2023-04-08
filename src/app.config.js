@@ -30,5 +30,10 @@ export default defineAppConfig({
         text: '我的订单',
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为了更好的服务体验，我们希望获取你的位置"
+    }
   }
 })
