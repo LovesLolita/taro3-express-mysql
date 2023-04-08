@@ -96,10 +96,11 @@ const List = () => {
 
   // 拿到quey值后请求航空数据
   useEffect(() => {
-    getList();
-  
-  }, [flightData]);
-
+    // 没有值不请求
+    if(Object.keys(flightData).length !== 0){
+      getList()
+    }
+  }, [flightData])
 
   // 处理列表时间数据
   const formatDateList = () => {
@@ -137,7 +138,7 @@ const List = () => {
       ...flightData,
       dptDate: date,
     });
-    getList();
+    // getList();
   };
   /*  */
 

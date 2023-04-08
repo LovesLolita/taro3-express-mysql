@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const sqlQuery = require("../mysql");
 const dayjs = require("dayjs");
-const request = require("request");
+// const request = require("request");
 
 /**
  * 得到一个两数之间的随机整数
@@ -68,6 +68,18 @@ router.get('/singleList', async (req, res) => {
   try {
     const result = await sqlQuery(strSql)
     // 模拟真实场景
+    let hkFly = [
+            "东方航空",
+            "中国南方航空",
+            "海南航空",
+            "深圳航空",
+            "上海航空",
+            "厦门航空",
+            "四川航空",
+            "山东航空",
+            "春秋航空",
+            "英国航空",
+          ];
     const resultList = result.map(item => ({
       ...item,
       dptAirportName,
@@ -76,6 +88,7 @@ router.get('/singleList', async (req, res) => {
       arrAirportName,
       dptTime: dptDate, // 模拟日期选择
       price: randomPrice(300, 1000),
+      airCompanyName: hkFly[Math.floor(Math.random() * 10)],
       dptTimeStr: dayjs(item.dptTime).format("HH:mm"),
       arrTimeStr: dayjs(item.arrTime).format("HH:mm"),
     }))
