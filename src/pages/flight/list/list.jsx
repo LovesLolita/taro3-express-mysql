@@ -119,7 +119,7 @@ const List = () => {
   };
   /* 航班列表end */
 
-  /*  */
+  /* 切换时间选择 */
   const [curAirCompanyIndex, setCurAirCompanyIndex] = useState(""); // 当前选中的下标
 
   const onAirCompanyChange = (e) => {
@@ -140,19 +140,19 @@ const List = () => {
     });
     // getList();
   };
-  /*  */
+  /* 切换时间选择end */
 
   /**
    * 跳转详情页
    * @{param}
    */
   const onFlightClick = (curFlight) => {
-    tools.navigateTo({
-      url: "/pages/flight/detail/detail",
-      data: {
-        ...curFlight,
-      },
-    });
+    // tools.navigateTo({
+    //   url: "/pages/flight/detail/detail",
+    //   data: {
+    //     ...curFlight,
+    //   },
+    // });
   };
   /* 跳转详情页end */
 
