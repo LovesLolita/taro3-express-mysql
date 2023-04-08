@@ -61,7 +61,8 @@
     "mysql2": "^3.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "taro-skeleton": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

@@ -92,6 +92,33 @@ const FlightIndex = (props) => {
       payload: exchangeObj,
     });
   }
+
+  // 城市选择搜寻
+  const onLinkToList = () => {
+    const {
+      arrCityName,
+      arrCityId,
+      arrAirportName,
+      dptCityId,
+      dptCityName,
+      dptAirportName,
+      dptDate,
+    } = props.flightIndex;
+    tools.navigateTo({
+      url: '/pages/flight/list/list',
+      data: {
+        arrCityName,
+        arrCityId,
+        arrAirportName,
+        dptCityId,
+        dptCityName,
+        dptAirportName,
+        dptDate,
+      }
+    })
+  }
+
+
   /* 城市选择end */
 
   /* 日历 */
@@ -194,7 +221,7 @@ const FlightIndex = (props) => {
               <View className='item date' onClick={openSwitchCalendar}>
                 {dayjs(props.flightIndex.dptDate).format("M月D日")}
               </View>
-              <Button className='search-btn' onClick={() => {}}>
+              <Button className='search-btn' onClick={onLinkToList}>
                 搜一下吧～
               </Button>
             </SwiperItem>

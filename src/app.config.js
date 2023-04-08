@@ -5,6 +5,14 @@ export default defineAppConfig({
     'pages/order/order',
     'pages/airportList/airportList',
   ],
+  subPackages: [
+    {
+      root: "pages/flight",
+      pages: [
+        "list/list",
+      ]
+    },
+  ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

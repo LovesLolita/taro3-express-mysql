@@ -60,6 +60,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-skeleton'],
     postcss: {
       autoprefixer: {
         enable: true,
