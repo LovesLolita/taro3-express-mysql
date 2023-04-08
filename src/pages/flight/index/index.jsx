@@ -13,7 +13,8 @@ import dayjs from "dayjs";
 import Tab from "@/components/Tab";
 import NoExploit from "@/components/NoExploit";
 import { adsReq } from "@/common/api";
-import CalendarView from "@/pages/flight/index/component/Calendar";
+import { sleep } from '@/common/utils'
+import CalendarView from "@/pages/flight/index/Calendar/Calendar";
 import tools from "@/common/tools";
 
 import "./index.scss";
@@ -46,7 +47,7 @@ const FlightIndex = (props) => {
   };
 
   /* 城市选择 */
-
+  const [isExchange, setIsExchange] = useState(false)
   // 切换城市
   const chooseFlightCity = (type) => {
     props.dispatch({
@@ -60,6 +61,37 @@ const FlightIndex = (props) => {
       url: "/pages/airportList/airportList",
     });
   };
+
+  // 城市反转
+  const exchangeCity = async() => {
+    const {
+      dptCityName,
+      dptCityId,
+      arrCityId,
+      arrCityName,
+      dptAirportName,
+      arrAirportName,
+    } = props.flightIndex;
+    const exchangeObj = {
+      dptCityName: arrCityName,
+      dptCityId: arrCityId,
+      arrCityName: dptCityName,
+      arrCityId: dptCityId,
+      dptAirportName: arrAirportName,
+      arrAirportName: dptAirportName,
+    };
+    setIsExchange(true)
+    props.dispatch({
+      type: "flightIndex/updateState",
+      payload: exchangeObj,
+    });
+    await sleep(500);
+    setIsExchange(false)
+    props.dispatch({
+      type: "flightIndex/updateState",
+      payload: exchangeObj,
+    });
+  }
   /* 城市选择end */
 
   /* 日历 */
@@ -143,17 +175,17 @@ const FlightIndex = (props) => {
             <SwiperItem>
               <View className='item station'>
                 <View
-                  className={`cell from ${false ? "slide" : ""}`}
+                  className={`cell from ${isExchange ? "slide" : ""}`}
                   onClick={() => chooseFlightCity("depart")}
                 >
                   {props.flightIndex.dptCityName}
                 </View>
                 <Text
-                  onClick={() => {}}
-                  className={`icon-zhihuan iconfont ${true ? "active" : ""}`}
+                  onClick={exchangeCity}
+                  className={`icon-zhihuan iconfont ${isExchange ? "active" : ""}`}
                 ></Text>
                 <View
-                  className={`cell to ${false ? "slide" : ""}`}
+                  className={`cell to ${isExchange ? "slide" : ""}`}
                   onClick={() => chooseFlightCity("arrive")}
                 >
                   {props.flightIndex.arrCityName}

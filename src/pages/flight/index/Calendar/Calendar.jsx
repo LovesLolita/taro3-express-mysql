@@ -2,6 +2,7 @@ import  { memo } from 'react'
 import { Calendar } from '@nutui/nutui-react-taro';
 import { MIN_DATE, MAX_DATE } from '@/common/constant'
 import { connect } from 'react-redux'
+import "./Calendar.scss"
 
 // redux 数据
 const mapStateToProps = (state) => {
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => {
   };
 }
 
-const CalendarView =memo((props) => {
+const CalendarView = memo((props) => {
 
   // 关闭日历
   const closeSwitch = () => {
