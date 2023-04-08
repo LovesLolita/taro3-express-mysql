@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useCallback, useEffect, useState } from "react";
 import {
   View,
@@ -96,6 +97,7 @@ const List = () => {
   // 拿到quey值后请求航空数据
   useEffect(() => {
     getList();
+  
   }, [flightData]);
 
 

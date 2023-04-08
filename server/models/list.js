@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const sqlQuery = require("../mysql");
-const dayjs = require('dayjs')
+const dayjs = require("dayjs");
+const request = require("request");
 
 /**
  * 得到一个两数之间的随机整数
@@ -10,7 +11,49 @@ const randomPrice = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
-}
+};
+
+// 创建机场飞行mysql
+// request(
+//   "https://www.brown77.cn/city/airportList",
+//   { json: true },
+//   async (err, res, body) => {
+//     const strSql1 = `
+//     create table flight_list(
+//       id int not null auto_increment,
+//       cityName char(50) not null,
+//       cityId int not null,
+//       firstLetter char(50) not null,
+//       airportName char(50) not null,
+//       airCompanyName char(50) not null,
+//       airIcon char(50) not null,
+//       primary key (id)
+//     ) engine=innodb;
+//   `;
+//     // 删除表
+//     await sqlQuery(`drop table if exists flight_list`);
+//     await sqlQuery(strSql1);
+//     let hk = [
+//       "东方航空",
+//       "中国南方航空",
+//       "海南航空",
+//       "深圳航空",
+//       "上海航空",
+//       "厦门航空",
+//       "四川航空",
+//       "山东航空",
+//       "春秋航空",
+//       "英国航空",
+//     ];
+//     for (let i = 0; i < body.result.length; i++) {
+//       const { cityId, cityName, firstLetter, airportName } = body.result[i];
+//       const airCompanyName = hk[Math.floor(Math.random() * 10)];
+//       console.log(airCompanyName);
+//       const strSql2 = `insert into flight_list(cityName, cityId, firstLetter, airportName, airCompanyName,airIcon) values ('${cityName}', ${cityId}, '${firstLetter}', '${airportName}','${airCompanyName}','${"https://images3.c-ctrip.com/ztrip/airline/CA.png"}');`;
+//       await sqlQuery(strSql2);
+//     }
+//   }
+// );
 
 router.get('/singleList', async (req, res) => {
   // req.query 请求参数
@@ -49,4 +92,4 @@ router.get('/singleList', async (req, res) => {
   }
 })
 
-module.exports = router
+module.exports = router;
